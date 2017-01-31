@@ -1,0 +1,70 @@
+.button-container {
+  text-align: right;
+}
+
+.description-container {
+  margin-top: 1rem;
+}
+
+.question {
+  margin: 1.5rem 0 2rem;
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  .question-values {
+    text-align: center;
+
+    input[type=radio] {
+      display: block;
+      margin: 0 auto 0.4rem;
+    }
+
+    .radio-label {
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      width: 11%;
+
+      .description {
+        display: block;
+        font-size: .8rem;
+      }
+    }
+
+    .ratio-scale-question {
+      margin-bottom: 2.2rem;
+
+      input {
+        width: 50%;
+      }
+
+      .left-label {
+        left: 0;
+      }
+
+      .right-label {
+        left: 50%;
+      }
+
+      .left-label,
+      .right-label {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        top: 1.2rem;
+        width: 50%;
+
+        .description {
+          display: block;
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
+
+.question-templates {
+  display: none;
+}

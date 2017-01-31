@@ -1,0 +1,73 @@
+{
+  "title": "Zwischenbefragung",
+  "description": "Bitte beantworte kurz folgende Fragen über den vorhergehenden Annotationsblock:",
+  "questions": [
+    {
+      "title": "Wie beansprucht fühlst du dich?",
+      "mandatory": true,
+      "scale": "interval",
+      "id": "stress",
+      "values": [
+        { "value": 1, "label": "Überhaupt nicht beansprucht" },
+        { "value": 2 },
+        { "value": 3 },
+        { "value": 4 },
+        { "value": 5 },
+        { "value": 6 },
+        { "value": 7, "label": "Sehr beansprucht" }
+      ],
+      "selected": -1
+    },
+    {
+      "title": "Wie monoton empfandst du die Annotation des vergangenen Blocks?",
+      "mandatory": true,
+      "scale": "interval",
+      "id": "monotonous",
+      "values": [
+        { "value": 1, "label": "Überhaupt nicht monoton" },
+        { "value": 2 },
+        { "value": 3 },
+        { "value": 4 },
+        { "value": 5 },
+        { "value": 6 },
+        { "value": 7, "label": "Sehr monoton" }
+      ],
+      "selected": -1
+    },
+    {
+      "title": "Wie zuverlässig schätzt du das Assistenzsystem, das Annotationsvorschläge generiert, ein?",
+      "mandatory": true,
+      "scale": "interval",
+      "id": "reliability",
+      "values": [
+        { "value": 1, "label": "Überhaupt nicht zuverlässig" },
+        { "value": 2 },
+        { "value": 3 },
+        { "value": 4 },
+        { "value": 5 },
+        { "value": 6 },
+        { "value": 7, "label": "Sehr zuverlässig" }
+      ],
+      "selected": -1
+    },
+    {
+      "title": "Wie korrekt schätzt du das Assistenzsystems ein?",
+      "mandatory": true,
+      "id": "correctness",
+      "scale": "ratio",
+      "value_type": "floating",
+      "value_unit": "%",
+      "bounds": {
+				"lower": {
+					"value": 0,
+					"label": "vollständig fehlerhaft"
+				},
+				"upper": {
+					"value": 100,
+					"label": "vollständig korrekt"
+				}
+			},
+      "selected": -1
+    }
+  ]
+}

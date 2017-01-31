@@ -1,0 +1,53 @@
+<div class="row description-container">
+  <h1 class="col-xs-12">
+    {{title}}
+  </h1>
+  <p class="col-xs-12">
+    {{description}}
+  </p>
+</div>
+
+<div class="questions-container">
+  {{#questions}}
+    <div class="row question" data-mandatory="{{mandatory}}" data-scale="{{scale}}" data-value-type="{{value_type}}" data-value-unit="{{value_unit}}" data-values="{{values}}" data-question-id="{{id}}" data-bounds-lower-value="{{bounds.lower.value}}" data-bounds-lower-label="{{bounds.lower.label}}" data-bounds-upper-value="{{bounds.upper.value}}" data-bounds-upper-label="{{bounds.upper.label}}">
+      <div class="col-xs-12 title">
+        <h3>
+          {{title}}
+        </h3>
+      </div>
+
+      <div class="col-xs-12 question-values">
+        {{#values}}
+          <label class="radio-label">
+            <input type="radio" value="{{value}}"/> {{value}} <span class="description">{{label}}</span>
+          </label>
+        {{/values}}
+      </div>
+
+    </div>
+  {{/questions}}
+</div>
+
+<div class="question-templates">
+  <div class="col-xs-12 ratio-scale-question">
+    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{question_id}#}" step=".5">
+    <div class="left-label">
+      {#{bounds.lower.value}#}{#{value_unit}#}
+      <span class="description">
+        {#{bounds.lower.label}#}
+      </span>
+    </div>
+    <div class="right-label">
+      {#{bounds.upper.value}#}{#{value_unit}#}
+      <span class="description">
+        {#{bounds.upper.label}#}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-12 col-sm-4 offset-sm-8 button-container">
+  <button class="btn btn-secondary save-survey-button" onclick="window.survey.saveAnnotation()">
+    Save answers
+  </button>
+</div>
