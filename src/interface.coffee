@@ -1,4 +1,4 @@
-class survey extends AnnotationIteration
+class questionnaire extends AnnotationIteration
 
   _this = undefined
   questionsQuery = '.interfaces-staging >:not(.template) .questions-container .question'
@@ -51,10 +51,10 @@ class survey extends AnnotationIteration
       $(this).parent().parent().parent().find('.title').removeClass('unanswered')
 
     $rangeInputQuestions = $('.interfaces-staging >:not(.template) .questions-container .ratio-scale-question')
-    $rangeInputQuestions.focus ->
+    $rangeInputQuestions.mousedown ->
       $('.range-value', this).removeClass('was-set')
 
-    $rangeInputQuestions.focusout ->
+    $rangeInputQuestions.mouseout ->
       $('.range-value', this).addClass('was-set')
 
   renderFader: (question, context) ->
@@ -76,7 +76,7 @@ class survey extends AnnotationIteration
     $tooltip.css('left', "#{percentageFromLeft}%")
 
   render: (template, data) ->
-    window.surveyPayload = data
+    window.questionnairePayload = data
     super
 
   saveAnnotation: ->
@@ -105,4 +105,4 @@ class survey extends AnnotationIteration
 
     this.saveChanges(answers) unless mandatoryQuestionUnanswered
 
-window.survey = new survey()
+window.questionnaire = new questionnaire()

@@ -1,12 +1,12 @@
-# Survey interface for Dalphi
+# Questionnaire interface for Dalphi
 
-This interface can be used to annotator surveys within the annotation process. A supporting iterate service can incude survey documents into the generated annotation documents to let the annotators answer a custom survey between the annotations. Integrate it to your [DALPHI](https://github.com/Dalphi/dalphi) project by copy'n'pasteing the HTML / CoffeeScript / SCSS source codes.
+This interface can be used to annotator questionnaires within the annotation process. A supporting iterate service can incude questionnaire documents into the generated annotation documents to let the annotators answer a custom questionnaire between the annotations. Integrate it to your [DALPHI](https://github.com/Dalphi/dalphi) project by copy'n'pasteing the HTML / CoffeeScript / SCSS source codes.
 
 ![screen shot 17-01-31](Bildschirmfoto vom 2017-01-31 um 15.59.17.png)
 
 ## How to use
 
-A supporting iteration service generates survey documents of the following structure. The interface renders the correct input fields autonomous. Just include this interface to your project and adjust your iteration service to generate documents fo the `survey` type.
+A supporting iteration service generates questionnaire documents of the following structure. The interface renders the correct input fields autonomous. Just include this interface to your project and adjust your iteration service to generate documents fo the `questionnaire` type.
 
 ## Expected payload
 

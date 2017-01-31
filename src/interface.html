@@ -33,7 +33,7 @@
     <div class="range-value">
     </div>
 
-    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{id}#}" step="1" oninput="window.survey.updateRangeTooltip(value, '{#{id}#}')">
+    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{id}#}" step="1" oninput="window.questionnaire.updateRangeTooltip(value, '{#{id}#}')">
 
     <div class="left-label">
       {#{bounds.lower.value}#}{#{value_unit}#}
@@ -52,7 +52,7 @@
 </div>
 
 <div class="col-xs-12 col-sm-4 offset-sm-8 button-container">
-  <button class="btn btn-secondary save-survey-button" onclick="window.survey.saveAnnotation()">
+  <button class="btn btn-secondary save-questionnaire-button" onclick="window.questionnaire.saveAnnotation()">
     Save answers
   </button>
 </div>
