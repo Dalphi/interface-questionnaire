@@ -11,6 +11,12 @@
 
   .title {
     margin-bottom: 1rem;
+
+    &.unanswered {
+      h3 {
+        color: #fc6766;
+      }
+    }
   }
 
   .question-values {
@@ -35,6 +41,21 @@
 
     .ratio-scale-question {
       margin-bottom: 2.2rem;
+
+      .range-value {
+        display: inline-block;
+        position: absolute;
+        text-align: center;
+        top: -1.3rem;
+        width: 10%;
+        font-size: .8rem;
+        opacity: 1;
+
+        &.was-set {
+          opacity: 0;
+          transition: opacity 2s;
+        }
+      }
 
       input {
         width: 50%;

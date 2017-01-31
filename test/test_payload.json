@@ -55,7 +55,6 @@
       "mandatory": true,
       "id": "correctness",
       "scale": "ratio",
-      "value_type": "floating",
       "value_unit": "%",
       "bounds": {
 				"lower": {

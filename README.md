@@ -19,6 +19,7 @@ A supporting iteration service generates survey documents of the following struc
       "title": "How is your cognitive load?",
 			"mandatory": true,
       "scale": "interval",
+      "id": "stress",
       "values": [
         { "value": 0, "label": "not stressed" },
         { "value": 1 },
@@ -31,16 +32,16 @@ A supporting iteration service generates survey documents of the following struc
     },
     {
       "title": "How old are you?",
+      "mandatory": false,
+      "id": "age",
       "scale": "ratio",
-      "value_type": "floating",
       "value_unit": "years",
-			"mandatory": false,
-      "values": {
-				"lower_bound": {
+      "bounds": {
+				"lower": {
 					"value": 0,
 					"label": "just born"
 				},
-				"upper_bound": {
+				"upper": {
 					"value": 120,
 					"label": "very old"
 				}
@@ -70,4 +71,3 @@ See [LICENSE](https://raw.githubusercontent.com/Dalphi/interface-ner_complete/ma
 This interface as well as DALPHI is maintained and funded by [Implisense](http://implisense.com/).
 
 We love open source software and are [hiring](http://implisense.com/en/jobs/)!
- 

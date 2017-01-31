@@ -9,7 +9,7 @@
 
 <div class="questions-container">
   {{#questions}}
-    <div class="row question" data-mandatory="{{mandatory}}" data-scale="{{scale}}" data-value-type="{{value_type}}" data-value-unit="{{value_unit}}" data-values="{{values}}" data-question-id="{{id}}" data-bounds-lower-value="{{bounds.lower.value}}" data-bounds-lower-label="{{bounds.lower.label}}" data-bounds-upper-value="{{bounds.upper.value}}" data-bounds-upper-label="{{bounds.upper.label}}">
+    <div class="row question" data-mandatory="{{mandatory}}" data-scale="{{scale}}" data-value-unit="{{value_unit}}" data-values="{{values}}" data-id="{{id}}" data-bounds-lower-value="{{bounds.lower.value}}" data-bounds-lower-label="{{bounds.lower.label}}" data-bounds-upper-value="{{bounds.upper.value}}" data-bounds-upper-label="{{bounds.upper.label}}">
       <div class="col-xs-12 title">
         <h3>
           {{title}}
@@ -29,14 +29,19 @@
 </div>
 
 <div class="question-templates">
-  <div class="col-xs-12 ratio-scale-question">
-    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{question_id}#}" step=".5">
+  <div class="col-xs-12 ratio-scale-question {#{id}#}-question">
+    <div class="range-value">
+    </div>
+
+    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{id}#}" step="1" oninput="window.survey.updateRangeTooltip(value, '{#{id}#}')">
+
     <div class="left-label">
       {#{bounds.lower.value}#}{#{value_unit}#}
       <span class="description">
         {#{bounds.lower.label}#}
       </span>
     </div>
+
     <div class="right-label">
       {#{bounds.upper.value}#}{#{value_unit}#}
       <span class="description">
