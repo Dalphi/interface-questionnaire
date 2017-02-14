@@ -58,11 +58,11 @@ class questionnaire extends AnnotationIteration
       $('.range-value', this).addClass('was-set')
 
   renderFader: (question, context) ->
-    template = $("#{qestionTemplatesQuery} .ratio-scale-question")[0].outerHTML
-    template = template.replace(new RegExp('{#{', 'g'), '{{')
-    template = template.replace(new RegExp('}#}', 'g'), '}}')
+    raw_template = $("#{qestionTemplatesQuery} .ratio-scale-question")[0].outerHTML
+    left_prepared_template = raw_template.replace(new RegExp('{#{', 'g'), '\{\{')
+    prepared_template = left_prepared_template.replace(new RegExp('}#}', 'g'), '\}\}')
 
-    renderedTemplate = Mustache.render(template, question)
+    renderedTemplate = Mustache.render(prepared_template, question)
     $('.question-values', context).html(renderedTemplate)
 
     $faderInput = $('.ratio-scale-question input', context)
@@ -103,6 +103,6 @@ class questionnaire extends AnnotationIteration
 
       answers.push(answer)
 
-    this.saveChanges(answers) unless mandatoryQuestionUnanswered
+    this.saveChanges({ content: answers }) unless mandatoryQuestionUnanswered
 
 window.questionnaire = new questionnaire()
