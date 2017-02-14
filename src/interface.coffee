@@ -46,6 +46,9 @@ class questionnaire extends AnnotationIteration
       else if question.scale == 'ratio'
         _this.renderFader(question, element)
 
+      else if question.scale == 'string'
+        _this.renderTextInput(question, element)
+
   initInputEventHandler: ->
     $("#{questionsQuery} input[type=radio]").click ->
       $(this).parent().parent().parent().find('.title').removeClass('unanswered')
@@ -68,6 +71,14 @@ class questionnaire extends AnnotationIteration
     $faderInput = $('.ratio-scale-question input', context)
     initValue = ($faderInput.attr('max') - $faderInput.attr('min')) / 2
     $faderInput.attr('value', initValue)
+
+  renderTextInput: (question, context) ->
+    raw_template = $("#{qestionTemplatesQuery} .string-scale-question")[0].outerHTML
+    left_prepared_template = raw_template.replace(new RegExp('{#{', 'g'), '\{\{')
+    prepared_template = left_prepared_template.replace(new RegExp('}#}', 'g'), '\}\}')
+
+    renderedTemplate = Mustache.render(prepared_template, question)
+    $('.question-values', context).html(renderedTemplate)
 
   updateRangeTooltip: (value, rangeId) ->
     $tooltip = $(".#{rangeId}-question .range-value")
@@ -97,12 +108,21 @@ class questionnaire extends AnnotationIteration
         else
           answer.selected = value
 
+      else if question.scale == 'string'
+        value = $("input##{question.id}").val()
+        if !value && question.mandatory
+          question.$question.find('.title').addClass('unanswered')
+          mandatoryQuestionUnanswered = true
+        else
+          answer.selected = value
+
       else if question.scale == 'ratio'
         answer.selected = question.$question.find('input').val()
         # ratio scaled questions have no mandatory check, because they have a default value
 
       answers.push(answer)
 
+    console.log 'answers:', answers
     this.saveChanges({ content: answers }) unless mandatoryQuestionUnanswered
 
 window.questionnaire = new questionnaire()
