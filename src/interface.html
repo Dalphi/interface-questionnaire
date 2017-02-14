@@ -33,17 +33,17 @@
     <div class="range-value">
     </div>
 
-    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{id}#}" step="1" oninput="window.questionnaire.updateRangeTooltip(value, '{#{id}#}')">
+    <input type="range" min="{#{bounds.lower.value}#}" max="{#{bounds.upper.value}#}" id="{#{id}#}" step="1" oninput="window.questionnaire.updateRangeTooltip(value, '{#{value_unit}#}', '{#{id}#}')">
 
     <div class="left-label">
-      {#{bounds.lower.value}#}{#{value_unit}#}
+      {#{bounds.lower.value}#} {#{value_unit}#}
       <span class="description">
         {#{bounds.lower.label}#}
       </span>
     </div>
 
     <div class="right-label">
-      {#{bounds.upper.value}#}{#{value_unit}#}
+      {#{bounds.upper.value}#} {#{value_unit}#}
       <span class="description">
         {#{bounds.upper.label}#}
       </span>

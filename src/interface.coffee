@@ -80,10 +80,11 @@ class questionnaire extends AnnotationIteration
     renderedTemplate = Mustache.render(prepared_template, question)
     $('.question-values', context).html(renderedTemplate)
 
-  updateRangeTooltip: (value, rangeId) ->
+  updateRangeTooltip: (value, unit, rangeId) ->
     $tooltip = $(".#{rangeId}-question .range-value")
-    $tooltip.html("#{value}%")
-    percentageFromLeft = 22.2 + ((value / 2) * 0.92)
+    $tooltip.html("#{value} #{unit}")
+    normalized_value = (value * 100) / $("input##{rangeId}").attr('max')
+    percentageFromLeft = 22.2 + ((normalized_value / 2) * 0.92)
     $tooltip.css('left', "#{percentageFromLeft}%")
 
   render: (template, data) ->
