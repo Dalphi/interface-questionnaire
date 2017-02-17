@@ -22,6 +22,11 @@ class questionnaire extends AnnotationIteration
         $question: $question,
         mandatory: $question.data('mandatory'),
         scale: $question.data('scale'),
+        placeholder: $question.data('placeholder'),
+        dependence: {
+          id: $question.data('dependence-id'),
+          selection_condition: $question.data('dependence-selection-condition')
+        },
         value_type: $question.data('value-type'),
         value_unit: $question.data('value-unit'),
         values: $question.data('values'),
@@ -48,6 +53,14 @@ class questionnaire extends AnnotationIteration
 
       else if question.scale == 'string'
         _this.renderTextInput(question, element)
+
+      if question.dependence.id
+        $question.hide()
+        $("input[name = '#{question.dependence.id}']").change ->
+          if $(this).val() == question.dependence.selection_condition
+            $question.show()
+          else
+            $question.hide()
 
   initInputEventHandler: ->
     $("#{questionsQuery} input[type=radio]").click ->

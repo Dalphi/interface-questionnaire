@@ -51,7 +51,7 @@
       "selected": -1
     },
     {
-      "title": "Wie korrekt schätzt du das Assistenzsystems ein?",
+      "title": "Wie viele Annotationen hat das Assistenzsystem korrekt gemacht?",
       "mandatory": true,
       "id": "correctness",
       "scale": "ratio",
@@ -59,11 +59,11 @@
       "bounds": {
 				"lower": {
 					"value": 0,
-					"label": "vollständig fehlerhaft"
+					"label": "gar keine"
 				},
 				"upper": {
 					"value": 100,
-					"label": "vollständig korrekt"
+					"label": "alle vollständig korrekt"
 				}
 			},
       "selected": -1

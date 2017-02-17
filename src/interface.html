@@ -9,17 +9,17 @@
 
 <div class="questions-container">
   {{#questions}}
-    <div class="row question" data-mandatory="{{mandatory}}" data-scale="{{scale}}" data-value-unit="{{value_unit}}" data-values="{{values}}" data-id="{{id}}" data-bounds-lower-value="{{bounds.lower.value}}" data-bounds-lower-label="{{bounds.lower.label}}" data-bounds-upper-value="{{bounds.upper.value}}" data-bounds-upper-label="{{bounds.upper.label}}">
+    <div class="row question" data-mandatory="{{mandatory}}" data-scale="{{scale}}" data-value-unit="{{value_unit}}" data-values="{{values}}" data-id="{{id}}" data-bounds-lower-value="{{bounds.lower.value}}" data-bounds-lower-label="{{bounds.lower.label}}" data-bounds-upper-value="{{bounds.upper.value}}" data-bounds-upper-label="{{bounds.upper.label}}" data-placeholder="{{placeholder}}" data-dependence-id="{{dependence.id}}" data-dependence-selection-condition="{{dependence.selection_condition}}">
       <div class="col-xs-12 title">
         <h3>
           {{title}}
         </h3>
       </div>
 
-      <div class="col-xs-12 question-values">
+      <div class="col-xs-12 question-values {{scale}}-scale">
         {{#values}}
           <label class="radio-label">
-            <input type="radio" value="{{value}}"/> {{value}} <span class="description">{{label}}</span>
+            <input id={{id}} type="radio" value="{{value}}"/> {{value}} <span class="description">{{label}}</span>
           </label>
         {{/values}}
       </div>
@@ -51,7 +51,7 @@
   </div>
 
   <div class="col-xs-12 string-scale-question {#{id}#}-question">
-    <input type="text" id="{#{id}#}" placeholder="bitte eingeben">
+    <input type="text" id="{#{id}#}" placeholder="{#{placeholder}#}">
   </div>
 </div>
 

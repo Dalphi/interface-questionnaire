@@ -7,10 +7,10 @@
 }
 
 .question {
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 3rem;
 
   .title {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 
     &.unanswered {
       h3 {
@@ -22,9 +22,13 @@
   .question-values {
     text-align: center;
 
+    &.ratio-scale {
+      margin-top: .75rem;
+    }
+
     input[type=radio] {
       display: block;
-      margin: 0 auto 0.4rem;
+      margin: 0 auto .4rem;
     }
 
     input[type=text] {
