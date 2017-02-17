@@ -13,6 +13,9 @@ class questionnaire extends AnnotationIteration
     this.initQuestions()
     this.initInputEventHandler()
 
+    $(document).unbind('keydown')
+    $(document).scrollTop(0)
+
     super
 
   initQuestions: ->
